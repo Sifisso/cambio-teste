@@ -6,7 +6,9 @@ import org.springframework.stereotype.Repository;
 import com.technoplus.cambio.models.Cambio;
 
 @Repository
-public interface CambioRepository extends JpaRepository<Cambio, String>{
+public interface CambioRepository extends JpaRepository<Cambio, Integer>{
 
+	Cambio findCambioById(int id);
+	
 	
 }
