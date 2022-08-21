@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,21 +25,21 @@ public class CambioController {
 	CambioRepository cambioRepository;
 	
 	
-/*	@GetMapping("/")
+	@GetMapping("/")
 	public String Verificarcambio() {
 		
 	cambioService.buscarCambio();
 	
-		return "cambio_teste";
-	}*/
+		return "Registado com sucesso. Consulte em: http://196.3.96.32:8080/cambio-teste/cambios/listar";
+	}
 	
 	/* Comando para listar todos, atenção, cada clique ou cada "refresh", implica mais um registo, 
 	diferenciando só pelo id do registo.
 	
 	*/
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public ResponseEntity<List<Cambio>> dadosDoCambio(){
-		cambioService.buscarCambio();
+		//cambioService.buscarCambio();
 		List<Cambio> obj = cambioService.buscarTodos();
 		
 		return ResponseEntity.ok().body(obj);
