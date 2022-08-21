@@ -8,7 +8,7 @@ import com.technoplus.cambio.models.Cambio;
 @Repository
 public interface CambioRepository extends JpaRepository<Cambio, Integer>{
 
-	Cambio findCambioById(int id);
+
 	
 	
 }
